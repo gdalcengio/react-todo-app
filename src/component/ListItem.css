@@ -1,0 +1,47 @@
+.list-item {
+  display: flex;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-bottom: 1px solid grey;
+  align-items: center;
+}
+
+.list-box {
+  -webkit-appearance: none;
+  background: white;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.list-box:checked {
+  background: rgb(255, 151, 151);
+}
+
+.list-description {
+  margin: 0.5 1rem;
+  padding: 0.2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.list-delete-button {
+  color: black;
+  float: right;
+}
+
+.low {
+  color: rgb(27, 165, 0);
+}
+
+.medium {
+  color: rgb(219, 143, 0);
+}
+
+.high {
+  color: rgb(204, 0, 0);
+}
