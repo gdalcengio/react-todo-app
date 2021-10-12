@@ -1,38 +1,60 @@
+html,
+body {
+  font: 18px "Century Gothic", Futura, sans-serif;
+  margin: 2rem;
+}
+
 .App {
+  margin: 2rem;
+  padding: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-input {
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  width: 20rem;
+}
+
+.list-item {
   display: flex;
-  flex-direction: column;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-bottom: 1px solid grey;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background: lightblue; */
 }
 
-.App-link {
-  color: #61dafb;
+.list-box {
+  -webkit-appearance: none;
+  background: white;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-box:checked {
+  background: rgb(255, 151, 151);
+}
+
+.list-description {
+  margin: 0.5 1rem;
+  padding: 0.2rem;
+  display: inline-block;
+  /* background: lightgoldenrodyellow; */
 }
