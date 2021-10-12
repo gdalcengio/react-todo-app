@@ -1,0 +1,60 @@
+html,
+body {
+  font: 18px "Century Gothic", Futura, sans-serif;
+  margin: 2rem;
+}
+
+.App {
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.text-input {
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.list {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  width: 20rem;
+}
+
+.list-item {
+  display: flex;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-bottom: 1px solid grey;
+  align-items: center;
+  /* background: lightblue; */
+}
+
+.list-box {
+  -webkit-appearance: none;
+  background: white;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.list-box:checked {
+  background: rgb(255, 151, 151);
+}
+
+.list-description {
+  margin: 0.5 1rem;
+  padding: 0.2rem;
+  display: inline-block;
+  /* background: lightgoldenrodyellow; */
+}
