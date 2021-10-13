@@ -1,16 +1,14 @@
 import React from "react";
 import ListComponent from "./component/ListComponent";
-import ListItem from "./component/ListItem";
 import InputComponent from "./component/InputComponent";
 import "./App.css";
 
 class App extends React.Component {
   constructor(props) {
     const data = [
-      { value: "Clean room", priority: "low" },
-      { value: "cook veggies", priority: "medium" },
-      { value: "Do dishes", priority: "low" },
-      { value: "do homework now", priority: "high" },
+      { id: 0, value: "Clean room", priority: "low" },
+      { id: 1, value: "Wash the dishes", priority: "medium" },
+      { id: 2, value: "Do homework now", priority: "high" },
     ];
     super(props);
 
@@ -20,30 +18,30 @@ class App extends React.Component {
   }
 
   addItem(value, prio) {
-    // console.log(`value: ${value}, prio: ${prio}`);
-    const item = { value: value, priority: prio };
+    const item = { id: this.state.list.length, value: value, priority: prio };
     this.setState({
       list: this.state.list.concat([item]),
     });
   }
 
-  render() {
-    const list = this.state.list.map((element, index) => (
-      <ListItem
-        key={index}
-        prio={element.priority}
-        desc={element.value}
-      ></ListItem>
-    ));
-    console.log(this.state.list);
+  removeItem(item) {
+    const newList = this.state.list.filter((i) => i.id !== item);
+    this.setState({
+      list: newList,
+    });
+  }
 
+  render() {
     return (
       <div className="App">
         <h1>To-Do</h1>
         <InputComponent
           onAddItem={(value, prio) => this.addItem(value, prio)}
         ></InputComponent>
-        <ListComponent list={list}></ListComponent>
+        <ListComponent
+          list={this.state.list}
+          onRemoveItem={(item) => this.removeItem(item)}
+        ></ListComponent>
       </div>
     );
   }

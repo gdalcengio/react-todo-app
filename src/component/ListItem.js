@@ -9,7 +9,12 @@ function ListItem(props) {
       <input className="list-box" type="checkbox"></input>
       <p className={classes}>
         {props.desc}
-        <span className="list-delete-button">x</span>
+        <span
+          className="list-delete-button"
+          onClick={(_) => props.removeItem(props.id)}
+        >
+          x
+        </span>
       </p>
     </li>
   );
