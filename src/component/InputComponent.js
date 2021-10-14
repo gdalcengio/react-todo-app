@@ -29,21 +29,32 @@ class InputComponent extends React.Component {
     this.props.onAddItem(this.state.text, this.state.prio);
   }
 
+  handleFormEnter(e) {
+    e.preventDefault();
+    this.handleAdd();
+  }
+
   render() {
     return (
-      <div>
+      <form onSubmit={(e) => this.handleFormEnter(e)}>
         <input
           className="text-input"
           type="text"
           onChange={(e) => this.handleTextChange(e)}
         ></input>
-        <select name="priority" onChange={(e) => this.handleSelectChange(e)}>
+        <select
+          className="priority-dropdown"
+          name="priority"
+          onChange={(e) => this.handleSelectChange(e)}
+        >
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <button onClick={this.handleAdd}>Add</button>
-      </div>
+        <button className="add-button" onClick={this.handleAdd}>
+          Add
+        </button>
+      </form>
     );
   }
 }

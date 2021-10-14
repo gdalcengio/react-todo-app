@@ -3,3 +3,17 @@
   padding: 0.2rem;
   border-radius: 0.4rem;
 }
+
+.priority-dropdown {
+  -webkit-appearance: none;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+}
+
+.add-button {
+  -webkit-appearance: none;
+  margin: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+}
