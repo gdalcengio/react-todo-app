@@ -10,7 +10,7 @@ class ListComponent extends React.Component {
   render() {
     const list = this.props.list.map((element, index) => (
       <ListItem
-        key={index}
+        key={element.id}
         id={element.id}
         prio={element.priority}
         desc={element.value}

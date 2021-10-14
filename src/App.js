@@ -18,7 +18,14 @@ class App extends React.Component {
   }
 
   addItem(value, prio) {
-    const item = { id: this.state.list.length, value: value, priority: prio };
+    const currList = this.state.list;
+    const idToAdd =
+      currList.length > 0 ? currList[currList.length - 1].id + 1 : 0;
+    const item = {
+      id: idToAdd,
+      value: value,
+      priority: prio,
+    };
     this.setState({
       list: this.state.list.concat([item]),
     });
