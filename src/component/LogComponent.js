@@ -15,9 +15,9 @@ class LogComponent extends React.Component {
     setInterval(this.props.onClearMessage, 3000);
   }
 
-  componentDidUpdate() {
-    setInterval(this.props.onClearMessage, 3000);
-  }
+  // componentDidUpdate() {
+  //   setInterval(this.props.onClearMessage, 3000);
+  // }
 
   render() {
     return <p>{this.props.message}</p>;
