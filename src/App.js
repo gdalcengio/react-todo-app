@@ -1,6 +1,8 @@
 import React from "react";
 import ListComponent from "./component/ListComponent";
 import InputComponent from "./component/InputComponent";
+import LogComponent from "./component/LogComponent";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -14,10 +16,12 @@ class App extends React.Component {
 
     this.state = {
       list: data,
+      logMessage: "Todo list loaded",
     };
   }
 
   addItem(value, prio) {
+    this.setLogMessage("Item added to list");
     const currList = this.state.list;
     const idToAdd =
       currList.length > 0 ? currList[currList.length - 1].id + 1 : 0;
@@ -32,9 +36,23 @@ class App extends React.Component {
   }
 
   removeItem(item) {
+    this.setLogMessage("Item deleted from list");
     const newList = this.state.list.filter((i) => i.id !== item);
     this.setState({
       list: newList,
+    });
+  }
+
+  setLogMessage(string) {
+    console.log(string);
+    this.setState({
+      logMessage: string,
+    });
+  }
+
+  clearMessage() {
+    this.setState({
+      logMessage: "",
     });
   }
 
@@ -45,6 +63,10 @@ class App extends React.Component {
         <InputComponent
           onAddItem={(value, prio) => this.addItem(value, prio)}
         ></InputComponent>
+        <LogComponent
+          onClearMessage={(_) => this.clearMessage()}
+          message={this.state.logMessage}
+        ></LogComponent>
         <ListComponent
           list={this.state.list}
           onRemoveItem={(item) => this.removeItem(item)}

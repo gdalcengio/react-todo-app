@@ -25,18 +25,19 @@ class InputComponent extends React.Component {
     });
   }
 
-  handleAdd() {
+  handleAdd(e) {
+    e.preventDefault();
     this.props.onAddItem(this.state.text, this.state.prio);
   }
 
-  handleFormEnter(e) {
-    e.preventDefault();
-    this.handleAdd();
-  }
+  // handleFormEnter(e) {
+  //   e.preventDefault();
+  //   this.handleAdd();
+  // }
 
   render() {
     return (
-      <form onSubmit={(e) => this.handleFormEnter(e)}>
+      <form onSubmit={(e) => this.handleAdd(e)}>
         <input
           className="text-input"
           type="text"
@@ -51,7 +52,7 @@ class InputComponent extends React.Component {
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <button className="add-button" onClick={this.handleAdd}>
+        <button className="add-button" onClick={(e) => this.handleAdd(e)}>
           Add
         </button>
       </form>
